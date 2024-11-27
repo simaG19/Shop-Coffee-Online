@@ -13,7 +13,7 @@
     else {
         factory(jQuery);
     }
-})(function ( ) {
+})(function ($) {
     'use strict';
 
     var working = false;
@@ -101,12 +101,12 @@
         }
     };
 
-     .fn.paroller = function (options) {
-        var windowHeight =  (window).height();
-        var documentHeight =  (document).height();
+    $.fn.paroller = function (options) {
+        var windowHeight = $(window).height();
+        var documentHeight = $(document).height();
 
         // default options
-        var options =  .extend({
+        var options = $.extend({
             factor: 0, // - to +
             factorXs: 0, // - to +
             factorSm: 0, // - to +
@@ -118,44 +118,44 @@
         }, options);
 
         return this.each(function () {
-            var  this =  (this);
-            var width =  (window).width();
-            var offset =  this.offset().top;
-            var height =  this.outerHeight();
+            var $this = $(this);
+            var width = $(window).width();
+            var offset = $this.offset().top;
+            var height = $this.outerHeight();
 
-            var dataType =  this.data('paroller-type');
-            var dataDirection =  this.data('paroller-direction');
-            var oldTransform =  this.css('transform');
+            var dataType = $this.data('paroller-type');
+            var dataDirection = $this.data('paroller-direction');
+            var oldTransform = $this.css('transform');
 
             var type = (dataType) ? dataType : options.type;
             var direction = (dataDirection) ? dataDirection : options.direction;
-            var factor = setMovement.factor( this, width, options);
+            var factor = setMovement.factor($this, width, options);
             var bgOffset = setMovement.bgOffset(offset, factor);
             var transform = setMovement.transform(offset, factor, windowHeight, height);
 
             if (type === 'background') {
                 if (direction === 'vertical') {
-                    setDirection.bgVertical( this, bgOffset);
+                    setDirection.bgVertical($this, bgOffset);
                 }
                 else if (direction === 'horizontal') {
-                    setDirection.bgHorizontal( this, bgOffset);
+                    setDirection.bgHorizontal($this, bgOffset);
                 }
             }
             else if (type === 'foreground') {
                 if (direction === 'vertical') {
-                    setDirection.vertical( this, transform, oldTransform);
+                    setDirection.vertical($this, transform, oldTransform);
                 }
                 else if (direction === 'horizontal') {
-                    setDirection.horizontal( this, transform, oldTransform);
+                    setDirection.horizontal($this, transform, oldTransform);
                 }
             }
 
-             (window).on('resize', function () {
-                var scrolling =  (this).scrollTop();
-                width =  (window).width();
-                offset =  this.offset().top;
-                height =  this.outerHeight();
-                factor = setMovement.factor( this, width, options);
+            $(window).on('resize', function () {
+                var scrolling = $(this).scrollTop();
+                width = $(window).width();
+                offset = $this.offset().top;
+                height = $this.outerHeight();
+                factor = setMovement.factor($this, width, options);
 
                 bgOffset = Math.round(offset * factor);
                 transform = Math.round((offset - (windowHeight / 2) + height) * factor);
@@ -166,28 +166,28 @@
                 }
 
                 if (type === 'background') {
-                    clearPositions.background( this);
+                    clearPositions.background($this);
                     if (direction === 'vertical') {
-                        setDirection.bgVertical( this, bgOffset);
+                        setDirection.bgVertical($this, bgOffset);
                     }
                     else if (direction === 'horizontal') {
-                        setDirection.bgHorizontal( this, bgOffset);
+                        setDirection.bgHorizontal($this, bgOffset);
                     }
                 }
                 else if ((type === 'foreground') && (scrolling <= documentHeight)) {
-                    clearPositions.foreground( this);
+                    clearPositions.foreground($this);
                     if (direction === 'vertical') {
-                        setDirection.vertical( this, transform);
+                        setDirection.vertical($this, transform);
                     }
                     else if (direction === 'horizontal') {
-                        setDirection.horizontal( this, transform);
+                        setDirection.horizontal($this, transform);
                     }
                 }
             });
 
-             (window).on('scroll', function () {
-                var scrolling =  (this).scrollTop();
-                documentHeight =  (document).height();
+            $(window).on('scroll', function () {
+                var scrolling = $(this).scrollTop();
+                documentHeight = $(document).height();
 
                 bgOffset = Math.round((offset - scrolling) * factor);
                 transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
@@ -199,18 +199,18 @@
 
                 if (type === 'background') {
                     if (direction === 'vertical') {
-                        setDirection.bgVertical( this, bgOffset);
+                        setDirection.bgVertical($this, bgOffset);
                     }
                     else if (direction === 'horizontal') {
-                        setDirection.bgHorizontal( this, bgOffset);
+                        setDirection.bgHorizontal($this, bgOffset);
                     }
                 }
                 else if ((type === 'foreground') && (scrolling <= documentHeight)) {
                     if (direction === 'vertical') {
-                        setDirection.vertical( this, transform, oldTransform);
+                        setDirection.vertical($this, transform, oldTransform);
                     }
                     else if (direction === 'horizontal') {
-                        setDirection.horizontal( this, transform, oldTransform);
+                        setDirection.horizontal($this, transform, oldTransform);
                     }
                 }
             });
