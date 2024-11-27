@@ -23,17 +23,17 @@
 
 
 
-!function($){
+!function( ){
 
     "use strict";
 
     var Typed = function(el, options){
 
         // chosen element to manipulate text
-        this.el = $(el);
+        this.el =  (el);
 
         // options
-        this.options = $.extend({}, $.fn.typed.defaults, options);
+        this.options =  .extend({},  .fn.typed.defaults, options);
 
         // text content of element
         this.baseText = this.el.text() || this.el.attr('placeholder') || '';
@@ -103,7 +103,7 @@
             , build: function(){
                 // Insert cursor
                 if (this.showCursor === true){
-                  this.cursor = $("<span class=\"typed-cursor\">" + this.cursorChar + "</span>");
+                  this.cursor =  ("<span class=\"typed-cursor\">" + this.cursorChar + "</span>");
                   this.el.after(this.cursor);
                 }
                 this.init();
@@ -288,17 +288,17 @@
 
         };
 
-    $.fn.typed = function (option) {
+     .fn.typed = function (option) {
         return this.each(function () {
-          var $this = $(this)
-            , data = $this.data('typed')
+          var  this =  (this)
+            , data =  this.data('typed')
             , options = typeof option == 'object' && option;
-          if (!data) $this.data('typed', (data = new Typed(this, options)));
+          if (!data)  this.data('typed', (data = new Typed(this, options)));
           if (typeof option == 'string') data[option]();
         });
     };
 
-    $.fn.typed.defaults = {
+     .fn.typed.defaults = {
         strings: ["These are the default values...", "You know what you should do?", "Use your own!", "Have a great day!"],
         // typing speed
         typeSpeed: 0,

@@ -4596,7 +4596,7 @@ box-usd:
   label: Box with US Dollar
   search:
     terms:
-      - $
+      -  
       - dollar-sign
       - donation
       - money
@@ -11832,7 +11832,7 @@ dollar-sign:
   label: Dollar Sign
   search:
     terms:
-      - $
+      -  
       - cost
       - dollar-sign
       - money
@@ -14228,7 +14228,7 @@ file-invoice-dollar:
   label: File Invoice with US Dollar
   search:
     terms:
-      - $
+      -  
       - account
       - bill
       - charge
@@ -17928,7 +17928,7 @@ hand-holding-usd:
   label: Hand Holding US Dollar
   search:
     terms:
-      - $
+      -  
       - carry
       - dollar sign
       - donation
@@ -18273,7 +18273,7 @@ hands-usd:
   label: Hands with US Dollar
   search:
     terms:
-      - $
+      -  
       - carry
       - dollar sign
       - donation
@@ -38105,7 +38105,7 @@ usd-circle:
   label: US Dollar Circle
   search:
     terms:
-      - $
+      -  
       - currency
       - dollar-sign
       - money
@@ -38125,7 +38125,7 @@ usd-square:
   label: US Dollar Square
   search:
     terms:
-      - $
+      -  
       - dollar-sign
       - money
       - price

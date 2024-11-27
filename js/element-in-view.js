@@ -1,4 +1,4 @@
-(function($) {
+(function( ) {
 
   /**
    * Copyright 2012, Digital Fusion
@@ -11,14 +11,14 @@
    *     only accounts for vertical position, not horizontal.
    */
 
-  $.fn.visible = function(partial) {
+   .fn.visible = function(partial) {
 
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top,
-          _bottom       = _top + $t.height(),
+      var  t            =  (this),
+           w            =  (window),
+          viewTop       =  w.scrollTop(),
+          viewBottom    = viewTop +  w.height(),
+          _top          =  t.offset().top,
+          _bottom       = _top +  t.height(),
           compareTop    = partial === true ? _bottom : _top,
           compareBottom = partial === true ? _top : _bottom;
 
@@ -28,10 +28,10 @@
 
 })(jQuery);
 
-$(window).on('scroll', function() {
+ (window).on('scroll', function() {
 
-  $(".testimonial-author .author-one, .testimonial-author .author-two, .testimonial-author .author-three,  .testimonial-author .author-four,  .testimonial-author .author-five, .testimonial-avatar .avatar-one, .testimonial-avatar .avatar-two, .testimonial-avatar .avatar-three, .testimonial-avatar .avatar-four, .testimonial-avatar .avatar-five, .testimonial-avatar .avatar-six").each(function(i, el) {
-    var el = $(el);
+   (".testimonial-author .author-one, .testimonial-author .author-two, .testimonial-author .author-three,  .testimonial-author .author-four,  .testimonial-author .author-five, .testimonial-avatar .avatar-one, .testimonial-avatar .avatar-two, .testimonial-avatar .avatar-three, .testimonial-avatar .avatar-four, .testimonial-avatar .avatar-five, .testimonial-avatar .avatar-six").each(function(i, el) {
+    var el =  (el);
     if (el.visible(true)) {
       el.addClass("now-in-view");
     } else {
