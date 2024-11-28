@@ -104,7 +104,7 @@
 
                                           
 
-                                            <li class="has-sub"><a href="#">Our Coffe House</a>
+                                            <li class="has-sub"><a href="#">Coffee House</a>
 												<ul>
                                                     <li><a href="menu.html">Menu</a></li>
                                                   
@@ -113,7 +113,7 @@
                                                 </ul> 
 											</li>
 
-                                            <li><a href="contact.html">Contact</a></li>                                               
+                                                                                          
                                         </ul>
                                     </nav>
                                 </div>
@@ -1145,7 +1145,111 @@
                 </div>
            \ </section>
              gallery-area-end -->
-        </main>
+       
+             <div class="floating-contact">
+                <div class="circle-icon" onclick="toggleDropdown()">
+                    📞
+                </div>
+                <div class="dropdown-menu">
+                    <a href="tel:+1234567890" class="contact-item" title="Call Us">
+                        📞 Call: +123 456 7890
+                    </a>
+                    <a href="mailto:info@example.com" class="contact-item" title="Email Us">
+                        ✉️ Email: info@example.com
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="contact-item" title="WhatsApp Us">
+                        💬 WhatsApp Us
+                    </a>
+                </div>
+            </div>
+            
+            
+       
+       
+            <style>
+                /* Floating Contact Container */
+/* Floating Circle Icon */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.circle-icon {
+    width: 60px;
+    height: 60px;
+    background: #4a2f09;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.circle-icon:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu (Initially Hidden) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 70px; /* Adjust to appear above the icon */
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    width: 200px; /* Adjust width as needed */
+}
+
+/* Contact Items */
+.dropdown-menu .contact-item {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Remove Border for Last Item */
+.dropdown-menu .contact-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover Effects for Contact Items */
+.dropdown-menu .contact-item:hover {
+    background: #5f0e06;
+    color: #ffffff;
+}
+
+/* Show Dropdown When Active */
+.dropdown-menu.show {
+    display: block;
+}
+
+            </style>
+
+            <script>
+                function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown-menu');
+    dropdown.classList.toggle('show');
+}
+
+            </script>
+
+            </main>
         <!-- main-area-end -->
          <!-- footer -->
         <footer class="footer-bg footer-p">

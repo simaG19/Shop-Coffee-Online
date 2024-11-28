@@ -552,7 +552,7 @@ $.scrollUp({
 	animation: 'fade',
 	animationInSpeed: 200,
 	animationOutSpeed: 200,
-	scrollText: '<i class="fas fa-level-up-alt"></i>',
+
 	activeOverlay: false,
 });
 
