@@ -94,7 +94,7 @@ function mainSlider() {
 	});
 	BasicSlider.slick({
 		autoplay: true,
-		autoplaySpeed: 10000,
+		autoplaySpeed: 2000,
 		dots:false ,
 		fade: true,
 		arrows: true,

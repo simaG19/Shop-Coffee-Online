@@ -693,7 +693,7 @@ color: #3f271e;
     border-radius: 50px;
     z-index: 1;
     cursor: pointer;
-    transition: .3s;
+    transition: .02s;
     
 }
  .slider-active .slick-dots li.slick-active button {
